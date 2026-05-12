@@ -1,8 +1,10 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5000", {
-  autoConnect: true,   // 🔥 CHANGE HERE
-  transports: ["websocket"]
-});
+const socket = io(
+  "https://nerabybackend-3.onrender.com",
+  {
+    autoConnect: false
+  }
+);
 
 export default socket;
