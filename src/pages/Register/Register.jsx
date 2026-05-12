@@ -97,7 +97,7 @@ export default function Register() {
           const lng = position.coords.longitude;
 
           const res = await axios.post(
-            "http://localhost:5000/api/auth/register",
+            "https://nerabybackend-6.onrender.com/api/auth/register",
             {
               ...form,
               lat,

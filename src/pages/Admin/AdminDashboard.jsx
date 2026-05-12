@@ -21,7 +21,7 @@ function AdminDashboard() {
     try {
 
       const res = await axios.get(
-       "https://nerabybackend-3.onrender.com/api/admin/dashboard"
+       "https://nerabybackend-6.onrender.com/api/admin/dashboard",
       );
 
       setData(res.data);
