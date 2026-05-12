@@ -1,0 +1,71 @@
+.page {
+  height: 100vh;
+  background: #0f0f0f;
+  color: white;
+  padding: 10px;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+}
+
+.userRow:hover {
+  background: #1a1a1a;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  flex: 1;
+}
+
+.sub {
+  font-size: 12px;
+  color: #777;
+}
+.page {
+  height: 100vh;
+  background: #0f0f0f;
+  color: white;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+}
+
+.row:hover {
+  background: #1a1a1a;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

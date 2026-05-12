@@ -1,0 +1,30 @@
+.page { min-height: 100vh; background: var(--bg); padding: 0 0 40px; max-width: 640px; margin: 0 auto; }
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--border); background: var(--bg2); }
+.logo { font-family: var(--font-display); color: var(--text1); font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.adminBadge { font-size: 11px; font-family: var(--font-body); background: var(--red-dim); color: var(--red); border-radius: 4px; padding: 2px 7px; }
+.tabs { display: flex; border-bottom: 1px solid var(--border); padding: 0 20px; }
+.tabBtn { padding: 12px 20px; background: none; border: none; color: var(--text4); font-size: 14px; cursor: pointer; border-bottom: 2px solid transparent; transition: all var(--transition); }
+.tabBtn:hover { color: var(--text2); }
+.tabActive { color: var(--red); border-bottom-color: var(--red); }
+.hint { font-size: 13px; color: var(--text4); text-align: center; padding: 30px; }
+.statGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px; }
+.statCard { background: var(--bg3); border-radius: var(--radius); padding: 16px; border: 1px solid var(--border); }
+.statIcon { font-size: 22px; margin-bottom: 8px; }
+.statValue { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--text1); margin-bottom: 4px; }
+.statLabel { font-size: 12px; color: var(--text4); }
+.secCard { margin: 0 20px; background: #1a1400; border: 1px solid #2a1f00; border-radius: var(--radius); padding: 16px; }
+.secTitle { font-size: 14px; font-weight: 600; color: var(--text2); margin-bottom: 12px; }
+.secRow { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #252000; }
+.secRow:last-child { border: none; }
+.chk { width: 16px; height: 16px; border-radius: 4px; border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; }
+.chkOn { background: var(--red); border-color: var(--red); color: #fff; }
+.secLabel { font-size: 13px; color: var(--text4); }
+.userTable { display: flex; flex-direction: column; padding: 12px 20px; gap: 8px; }
+.userRow { display: flex; align-items: center; gap: 12px; background: var(--bg3); border-radius: var(--radius); padding: 12px 14px; border: 1px solid var(--border); }
+.userAv { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
+.userInfo { flex: 1; min-width: 0; }
+.userName  { font-size: 14px; font-weight: 500; color: var(--text1); }
+.userEmail { font-size: 12px; color: var(--text4); margin: 2px 0; }
+.userMeta  { font-size: 11px; color: var(--text4); }
+.userActions { flex-shrink: 0; }
+.bannedTag { font-size: 12px; color: #f87171; background: #450a0a; border-radius: 4px; padding: 4px 8px; }

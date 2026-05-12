@@ -1,0 +1,152 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 24px 20px 100px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-display);
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--text1);
+  margin-bottom: 6px;
+}
+
+.sub {
+  font-size: 14px;
+  color: var(--text4);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.step {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.stepNum {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stepText {
+  font-size: 14px;
+  color: var(--text3);
+  line-height: 1.6;
+}
+
+.stepText strong {
+  color: var(--text1);
+}
+
+.featureBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.feature {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+}
+
+.feature span {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.feature p {
+  font-size: 13px;
+  color: var(--text3);
+}
+
+.socialRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.socialCard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--text2);
+}
+
+.warnBox {
+  background: #1a1200;
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  border: 1px solid #2a1f00;
+}
+
+.warnIcon {
+  font-size: 18px;
+}
+
+.warnText {
+  font-size: 13px;
+  color: var(--text4);
+  line-height: 1.5;
+}
+
+.ctaBtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--red);
+  color: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+.ctaBtn:hover {
+  background: var(--red-hover);
+}

@@ -1,0 +1,122 @@
+.page { min-height: 100vh; background: var(--bg); padding: 20px 16px 90px; max-width: 480px; margin: 0 auto; }
+.header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 24px; }
+.logo { font-family: var(--font-display); color: var(--red); font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.greeting { font-family: var(--font-display); font-size: 24px; color: var(--text1); margin-bottom: 2px; }
+.sub { font-size: 13px; color: var(--text4); }
+.mapBtn { background: var(--bg3); border: 1px solid var(--border2); border-radius: var(--radius); padding: 8px 14px; font-size: 13px; color: var(--text2); white-space: nowrap; transition: all var(--transition); }
+.mapBtn:hover { border-color: var(--red); color: var(--red); }
+.featGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+.featCard { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 18px 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-lg); transition: all var(--transition); text-decoration: none; }
+.featCard:hover { border-color: var(--fc); background: var(--fb); }
+.featIcon { font-size: 26px; }
+.featLabel { font-size: 13px; font-weight: 500; color: var(--text2); }
+.featCard:hover .featLabel { color: var(--fc); }
+.section { margin-bottom: 20px; }
+.sectionHead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.sectionTitle { font-size: 15px; font-weight: 600; color: var(--text1); }
+.seeAll { font-size: 12px; color: var(--red); }
+.hint { font-size: 13px; color: var(--text4); text-align: center; padding: 20px 0; }
+.userList { display: flex; flex-direction: column; gap: 8px; }
+.userCard { display: flex; align-items: center; gap: 12px; background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+.uAvatar { width: 36px; height: 36px; border-radius: 50%; background: var(--red-dim); color: var(--red); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
+.uInfo { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.uName { font-size: 14px; font-weight: 500; color: var(--text1); }
+.uDist { font-size: 11px; color: var(--text4); }
+.uPills { display: flex; gap: 4px; }
+.pill { padding: 3px 7px; border-radius: 999px; font-size: 12px; }
+
+.profileCard {
+
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+}
+
+.avatar {
+
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #ff4d4d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+
+}
+
+.profileInfo h2 {
+
+  margin: 0;
+  color: white;
+
+}
+
+.profileInfo p {
+
+  margin: 4px 0;
+  color: #bbb;
+
+}
+
+.interests {
+
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+
+}
+
+.tag {
+
+  background: #333;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+
+
+}
+.chatBtn {
+
+  background: var(--red);
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 16px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+
+}
+
+.chatBtn:hover {
+
+  opacity: 0.9;
+
+}
+
+.bio {
+
+  font-size: 12px;
+
+  color: var(--text4);
+
+}

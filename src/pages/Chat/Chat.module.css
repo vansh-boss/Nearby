@@ -1,0 +1,40 @@
+.page{
+  height:100vh;
+  background:#0f0f0f;
+  padding-bottom:80px;
+}
+
+.loading{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  background:#0f0f0f;
+}
+
+.emptyPage{
+  height:100vh;
+  background:#0f0f0f;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+}
+
+.emptyCard{
+  background:#181818;
+  border:1px solid #2a2a2a;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  color:white;
+}
+
+.emptyCard h2{
+  margin-bottom:10px;
+}
+
+.emptyCard p{
+  color:#999;
+}

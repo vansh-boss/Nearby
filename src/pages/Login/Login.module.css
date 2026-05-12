@@ -1,0 +1,128 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background: var(--bg);
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.roleRow {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.roleRow button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: var(--bg3);
+  color: var(--text2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.active {
+  background: var(--red) !important;
+  color: white !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border2);
+  background: var(--bg4);
+  color: white;
+  outline: none;
+}
+
+.form button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--red);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ADMIN RIGHT PANEL */
+
+.adminPanel {
+  width: 100%;
+  max-width: 400px;
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.adminPanel h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.adminPanel input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #1f2937;
+  color: white;
+  outline: none;
+}
+
+.adminPanel button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--red);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--text3);
+  font-size: 14px;
+}
+
+.footerLink {
+  color: var(--red);
+  margin-left: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}
