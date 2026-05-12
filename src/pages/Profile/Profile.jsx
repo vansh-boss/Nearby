@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../Components/Navbar/Navbar";
 import { getInterest } from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
 import styles from "./Profile.module.css";
