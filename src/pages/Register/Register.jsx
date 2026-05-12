@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { INTERESTS } from '../../utils/constants';
-import Button from '../../components/Buttons/Button';
+import Button from '../../Components/Buttons/Button';
 import toast from 'react-hot-toast';
 import styles from './Register.module.css';
 
