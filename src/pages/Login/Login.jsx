@@ -49,30 +49,53 @@ export default function Login() {
   };
 
   // ADMIN LOGIN
-  const handleAdminLogin = async () => {
+const handleAdminLogin = async () => {
 
-    try {
+  try {
 
-      const res = await axios.post(
-        "http://localhost:5000/api/admin/login",
-        {
-          email: adminEmail,
-          password: adminPassword
-        }
-      );
+    const res = await axios.post(
 
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("admin", JSON.stringify(res.data.admin));
+      "https://nerabybackend-6.onrender.com/api/admin/login",
 
-      navigate("/admin");
+      {
+        email: adminEmail,
+        password: adminPassword
+      }
 
-    } catch (error) {
-      console.log(error.response?.data);
-      alert(error.response?.data?.message || "Admin Login Failed");
-    }
+    );
 
-  };
+    localStorage.setItem(
+      "token",
+      res.data.token
+    );
 
+    localStorage.setItem(
+
+      "admin",
+
+      JSON.stringify(
+        res.data.admin
+      )
+
+    );
+
+    navigate("/admin");
+
+  } catch (error) {
+
+    console.log(error);
+
+    alert(
+
+      error.response?.data?.message ||
+
+      "Admin Login Failed"
+
+    );
+
+  }
+
+};
   return (
     <div className={styles.page}>
       <div className={styles.card}>

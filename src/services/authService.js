@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API = "http://localhost:5000/api/auth";
+const API =
+"https://nerabybackend-6.onrender.com/api/auth";
 
 export const registerUser = (data) => {
 
@@ -8,6 +9,7 @@ export const registerUser = (data) => {
     `${API}/register`,
     data
   );
+
 };
 
 export const loginUser = (data) => {
@@ -16,4 +18,5 @@ export const loginUser = (data) => {
     `${API}/login`,
     data
   );
+
 };

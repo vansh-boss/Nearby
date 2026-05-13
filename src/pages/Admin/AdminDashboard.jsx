@@ -16,39 +16,68 @@ function AdminDashboard() {
 
   useEffect(() => {
 
-  const fetchData = async () => {
+    const fetchData =
+    async () => {
 
-    try {
+      try {
 
-      const res = await axios.get(
-       "https://nerabybackend-6.onrender.com/api/admin/dashboard",
-      );
+        // ✅ TOKEN
 
-      setData(res.data);
+        const token =
+          localStorage.getItem(
+            "token"
+          );
 
-    } catch (error) {
+        // ✅ API CALL
 
-      console.log(error);
+        const res =
+          await axios.get(
 
-    }
+            "https://nerabybackend-6.onrender.com/api/admin/dashboard",
 
-  };
+            {
+              headers: {
 
-  fetchData();
+                Authorization:
+                `Bearer ${token}`
 
-  const interval = setInterval(() => {
+              }
+            }
+
+          );
+
+        setData(res.data);
+
+      } catch (error) {
+
+        console.log(
+          error.response?.data ||
+          error.message
+        );
+
+      }
+
+    };
 
     fetchData();
 
-  }, 3000);
+    const interval =
+      setInterval(() => {
 
-  return () => clearInterval(interval);
+        fetchData();
 
-}, []);
+      }, 3000);
+
+    return () =>
+      clearInterval(interval);
+
+  }, []);
 
   return (
 
     <div className={styles.page}>
+
+      {/* TOPBAR */}
 
       <div className={styles.topbar}>
 
@@ -67,6 +96,9 @@ function AdminDashboard() {
         </div>
 
       </div>
+
+
+      {/* STATS */}
 
       <div className={styles.statGrid}>
 
@@ -104,6 +136,9 @@ function AdminDashboard() {
 
       </div>
 
+
+      {/* USER TABLE */}
+
       <div className={styles.userTable}>
 
         {data.users?.map((u) => (
@@ -114,7 +149,9 @@ function AdminDashboard() {
           >
 
             <div className={styles.userAv}>
+
               {u.name?.[0]}
+
             </div>
 
             <div className={styles.userInfo}>
@@ -130,7 +167,9 @@ function AdminDashboard() {
               <div className={styles.userMeta}>
 
                 {u.isOnline
+
                   ? "🟢 Active"
+
                   : "⚫ Offline"}
 
               </div>
