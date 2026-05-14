@@ -110,18 +110,27 @@ export default function Discover() {
 
   }, [radius]);
 
-  const filtered =
+    
 
+  // INTEREST FILTER
+ const filtered = users.filter((u) => {
+
+  // INTEREST FILTER
+  const matchInterest =
     filter === "all"
+      ? true
+      : (u.interests || []).includes(filter);
 
-      ? users
+  // DISTANCE FILTER
+  const matchRadius =
+    Number(u.distanceKm || 0) <= radius;
 
-      : users.filter((u) =>
+  return (
+    matchInterest &&
+    matchRadius
+  );
 
-          (u.interests || [])
-          .includes(filter)
-
-        );
+});
 
   const openChat = (user) => {
 
