@@ -1,27 +1,40 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect }
+from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate }
+from "react-router-dom";
 
-import Navbar from "../../Components/Navbar/Navbar";
+import Navbar
+from "../../Components/Navbar/Navbar";
 
-import Map from "../../Components/Map/Map";
+import Map
+from "../../Components/Map/Map";
 
 import {
+
   formatDistance,
+
   getInterest,
+
   initials,
+
   avatarColor
+
 } from "../../utils/helper";
 
-import { INTERESTS } from "../../utils/constants";
+import { INTERESTS }
+from "../../utils/constants";
 
-import api from "../../services/api";
+import api
+from "../../services/api";
 
-import styles from "./Discover.module.css";
+import styles
+from "./Discover.module.css";
 
 export default function Discover() {
 
-  const navigate = useNavigate();
+  const navigate =
+    useNavigate();
 
   const [users, setUsers] =
     useState([]);
@@ -35,6 +48,9 @@ export default function Discover() {
   const [filter, setFilter] =
     useState("all");
 
+  const [radius, setRadius] =
+    useState(5);
+
   const [loading, setLoading] =
     useState(true);
 
@@ -43,7 +59,8 @@ export default function Discover() {
 
   useEffect(() => {
 
-    navigator.geolocation?.getCurrentPosition(
+    navigator.geolocation
+    ?.getCurrentPosition(
 
       async ({ coords }) => {
 
@@ -58,17 +75,26 @@ export default function Discover() {
 
           const { data } =
             await api.get(
+
               "/users/nearby/list",
+
               {
                 params: {
+
                   lat: c[0],
+
                   lng: c[1],
-                  radius: 5
+
+                  radius
+
                 }
               }
+
             );
 
-          setUsers(data.users || []);
+          setUsers(
+            data.users || []
+          );
 
         } catch (err) {
 
@@ -90,24 +116,34 @@ export default function Discover() {
 
     );
 
-  }, []);
+  }, [radius]);
 
   const filtered =
+
     filter === "all"
+
       ? users
+
       : users.filter((u) =>
+
           (u.interests || [])
-            .includes(filter)
+          .includes(filter)
+
         );
 
   const openChat = (user) => {
 
     localStorage.setItem(
+
       "chatUser",
+
       JSON.stringify(user)
+
     );
 
-    navigate(`/chat/${user._id}`);
+    navigate(
+      `/chat/${user._id}`
+    );
 
   };
 
@@ -129,6 +165,54 @@ export default function Discover() {
 
       </div>
 
+      {/* RANGE */}
+
+      <div className={styles.filterRow}>
+
+        <button
+          className={
+            radius === 2
+              ? styles.chipActive
+              : styles.chip
+          }
+
+          onClick={() =>
+            setRadius(2)
+          }
+        >
+          2 KM
+        </button>
+
+        <button
+          className={
+            radius === 5
+              ? styles.chipActive
+              : styles.chip
+          }
+
+          onClick={() =>
+            setRadius(5)
+          }
+        >
+          5 KM
+        </button>
+
+        <button
+          className={
+            radius === 10
+              ? styles.chipActive
+              : styles.chip
+          }
+
+          onClick={() =>
+            setRadius(10)
+          }
+        >
+          10 KM
+        </button>
+
+      </div>
+
       {/* MAP */}
 
       <div className={styles.mapWrap}>
@@ -136,7 +220,7 @@ export default function Discover() {
         <Map
           users={filtered}
           center={center}
-          radius={5}
+          radius={radius}
         />
 
         <div className={styles.mapOverlay} />
@@ -149,144 +233,14 @@ export default function Discover() {
 
         </div>
 
-        {/* LIVE USERS */}
-
-        <div className={styles.liveUsers}>
-
-          {filtered
-            .slice(0, 6)
-            .map((u, i) => {
-
-              const av =
-                avatarColor(
-                  u.name || ""
-                );
-
-              return (
-
-                <div
-                  key={u._id}
-
-                  className={styles.livePin}
-
-                  style={{
-                    top: `${15 + i * 12}%`,
-                    left: `${12 + i * 13}%`
-                  }}
-
-                  onClick={() =>
-                    setSelectedUser(u)
-                  }
-                >
-
-                  <div
-                    className={styles.pinAvatar}
-
-                    style={{
-                      background: av.bg,
-                      color: av.color
-                    }}
-                  >
-                    {initials(u.name)}
-                  </div>
-
-                  <div className={styles.pinName}>
-                    📍 {u.name}
-                  </div>
-
-                </div>
-
-              );
-
-            })}
-
-        </div>
-
       </div>
-
-      {/* PREVIEW */}
-
-      {selectedUser && (
-
-        <div className={styles.previewCard}>
-
-          <div className={styles.previewTop}>
-
-            <div className={styles.previewAvatar}>
-              {initials(selectedUser.name)}
-            </div>
-
-            <div>
-
-              <h3 className={styles.previewName}>
-                {selectedUser.name}
-              </h3>
-
-              <p className={styles.previewDist}>
-                📍 {
-                  formatDistance(
-                    selectedUser.distanceKm || 0
-                  )
-                }
-              </p>
-
-            </div>
-
-          </div>
-
-          <div className={styles.previewPills}>
-
-            {(selectedUser.interests || [])
-              .slice(0, 3)
-              .map((id) => {
-
-                const int =
-                  getInterest(id);
-
-                return (
-
-                  <span
-                    key={id}
-
-                    className={styles.previewPill}
-
-                    style={{
-                      background: int.bg,
-                      color: int.color
-                    }}
-                  >
-                    {int.icon} {int.label}
-                  </span>
-
-                );
-
-              })}
-
-          </div>
-
-          <div className={styles.previewActions}>
-
-            <button
-              className={styles.chatBtn}
-
-              onClick={() =>
-                openChat(selectedUser)
-              }
-            >
-              💬 Chat
-            </button>
-
-          </div>
-
-        </div>
-
-      )}
 
       {/* FILTER */}
 
       <div className={styles.filterRow}>
 
         <button
+
           className={`${styles.chip}
           ${
             filter === "all"
@@ -325,27 +279,33 @@ export default function Discover() {
 
       </div>
 
-      {/* USER LIST */}
+      {/* USERS */}
 
       <div className={styles.list}>
 
         {loading && (
+
           <p className={styles.hint}>
             Finding nearby users...
           </p>
+
         )}
 
         {!loading &&
           filtered.length === 0 && (
-            <p className={styles.hint}>
-              No users nearby.
-            </p>
-          )}
+
+          <p className={styles.hint}>
+            No users nearby.
+          </p>
+
+        )}
 
         {filtered.map((u) => {
 
           const av =
-            avatarColor(u.name || "");
+            avatarColor(
+              u.name || ""
+            );
 
           return (
 
@@ -385,10 +345,8 @@ export default function Discover() {
 
                 <button
                   className={styles.chatBtn}
-                  
 
                   onClick={() =>
-                    
                     openChat(u)
                   }
                 >
