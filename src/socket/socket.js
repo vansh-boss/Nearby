@@ -1,9 +1,9 @@
 import { io } from "socket.io-client";
 
 const socket = io(
-  "https://nerabybackend-6.onrender.com/",
+  "https://nerabybackend-6.onrender.com",
   {
-    autoConnect: false,
+    autoConnect: true,   // ✅ FIX HERE
     transports: ["websocket"]
   }
 );

@@ -43,7 +43,7 @@ export default function Home() {
               params: {
                 lat: coords.latitude,
                 lng: coords.longitude,
-                radius: 2,
+                radius: 5,
               },
             }
 
@@ -89,7 +89,7 @@ export default function Home() {
         <div>
 
           <div className={styles.logo}>
-            ConnectNearby
+             metivo
           </div>
 
           <h1 className={styles.greeting}>

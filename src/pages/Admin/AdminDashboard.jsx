@@ -83,7 +83,7 @@ function AdminDashboard() {
 
         <div className={styles.logo}>
 
-          ConnectNearby
+          Metivo
 
           <span
             className={

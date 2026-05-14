@@ -48,14 +48,12 @@ export default function Discover() {
   const [filter, setFilter] =
     useState("all");
 
+  // ✅ RADIUS
   const [radius, setRadius] =
-    useState(5);
+    useState(2);
 
   const [loading, setLoading] =
     useState(true);
-
-  const [selectedUser, setSelectedUser] =
-    useState(null);
 
   useEffect(() => {
 
@@ -105,12 +103,6 @@ export default function Discover() {
           setLoading(false);
 
         }
-
-      },
-
-      () => {
-
-        setLoading(false);
 
       }
 
@@ -165,15 +157,15 @@ export default function Discover() {
 
       </div>
 
-      {/* RANGE */}
+      {/* ✅ RANGE BUTTONS */}
 
-      <div className={styles.filterRow}>
+      <div className={styles.radiusRow}>
 
         <button
           className={
             radius === 2
-              ? styles.chipActive
-              : styles.chip
+              ? styles.radiusActive
+              : styles.radiusBtn
           }
 
           onClick={() =>
@@ -186,8 +178,8 @@ export default function Discover() {
         <button
           className={
             radius === 5
-              ? styles.chipActive
-              : styles.chip
+              ? styles.radiusActive
+              : styles.radiusBtn
           }
 
           onClick={() =>
@@ -200,8 +192,8 @@ export default function Discover() {
         <button
           className={
             radius === 10
-              ? styles.chipActive
-              : styles.chip
+              ? styles.radiusActive
+              : styles.radiusBtn
           }
 
           onClick={() =>

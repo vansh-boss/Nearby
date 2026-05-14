@@ -120,3 +120,46 @@
   color: var(--text4);
 
 }
+
+.radiusRow {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+}
+
+.radiusBtn {
+
+  border: none;
+
+  background: #1e293b;
+
+  color: white;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+}
+
+.radiusActive {
+
+  border: none;
+
+  background: #7c3aed;
+
+  color: white;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+}
+

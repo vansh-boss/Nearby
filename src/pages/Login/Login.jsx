@@ -100,7 +100,7 @@ const handleAdminLogin = async () => {
     <div className={styles.page}>
       <div className={styles.card}>
 
-        <h1 className={styles.logo}>ConnectNearby</h1>
+        <h1 className={styles.logo}>metivo</h1>
 
         <h2 className={styles.heading}>Welcome Back</h2>
         <p className={styles.sub}>Login to your account</p>

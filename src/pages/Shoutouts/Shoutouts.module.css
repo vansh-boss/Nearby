@@ -28,3 +28,75 @@
 .timingBtn:hover { border-color: var(--red); }
 .timingOn { background: var(--red-dim); color: var(--red); border-color: var(--red); }
 .modalActions { display: flex; gap: 10px; justify-content: flex-end; }
+
+
+.radiusRow {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  overflow-x: auto;
+
+}
+
+.radiusBtn {
+
+  border: none;
+
+  background: #1e293b;
+
+  color: white;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+}
+
+.radiusActive {
+
+  border: none;
+
+  background: #7c3aed;
+
+  color: white;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+}
+.radiusRow{
+  display:flex;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.radiusBtn{
+  border:none;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#1e293b;
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.radiusActive{
+  border:none;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+  font-weight:700;
+}

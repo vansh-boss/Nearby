@@ -154,7 +154,7 @@ export default function Register() {
       <div className={styles.card}>
 
         <div className={styles.logo}>
-          ConnectNearby
+          metivo
         </div>
 
         <div className={styles.progress}>

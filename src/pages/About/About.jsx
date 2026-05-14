@@ -27,7 +27,7 @@ export default function About() {
     <div className={styles.page}>
 
       <div className={styles.logo}>
-        ConnectNearby
+        Metivo
       </div>
 
       <h1 className={styles.heading}>
